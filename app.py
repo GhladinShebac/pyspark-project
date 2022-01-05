@@ -9,7 +9,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
-df = pd.get_dummies(pd.read_csv("bank.csv"), columns = [col for col in df.columns if df[col].dtype == "O" and col!='deposit'])
+df = pd.read_csv("bank.csv")
+df = pd.get_dummies(df, columns = ['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact', 'month', 'poutcome'])
 df['deposit'] = LabelEncoder().fit_transform(df['deposit'])
 X, y  = df.drop('deposit', axis=1), df['deposit']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
@@ -74,6 +75,7 @@ def user_input_var():
 
 df = user_input_var()
 df = spark.createDataFrame(df)
+df = pd.get_dummies(df, columns = ['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact', 'month', 'poutcome'])
 #cols = df.columns
 #categoricalColumns = ['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact', 'poutcome']
 #stages = []
