@@ -63,7 +63,7 @@ def user_input_var():
   pdays = st.slider('pdays', -1, 1000)
   previous = st.slider('previous', 0, 60)
   poutcome = st.selectbox('poutcome', ('unknown', 'other', 'failure', 'success'))
-  deposit = st.radio("deposit", ('no', 'yes'))
+  #deposit = st.radio("deposit", ('no', 'yes'))
 
   data = {'age': age, 'job': job, 'marital': marital, 'education': education,
         'default': default, 'balance': balance, 'housing': housing,
