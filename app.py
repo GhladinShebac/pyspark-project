@@ -69,7 +69,7 @@ def user_input_var():
         'default': default, 'balance': balance, 'housing': housing,
         'loan': loan, 'contact': contact, 'day': day, 'month': month,
         'duration': duration, 'campaign': campaign, 'pdays': pdays,
-        'previous': previous, 'poutcome': poutcome, 'deposit': deposit}
+        'previous': previous, 'poutcome': poutcome}
   features = pd.DataFrame(data, index=[0])
   return features
 
