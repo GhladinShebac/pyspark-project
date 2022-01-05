@@ -42,7 +42,7 @@ def user_input_var():
   return features
 
 df = user_input_var()
-df = pd.get_dummies(df, columns = ['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact', 'month', 'poutcome'])
+df = pd.get_dummies(df, columns = ['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact', 'month', 'poutcome']).asarray()
 
 if st.button('Predict'):
     pred = clf.predict(df)
